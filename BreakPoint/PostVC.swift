@@ -30,31 +30,36 @@ class PostVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowNotification(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHideNotification(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         //keyboardStuff#######
-
     }
     
     
   //Actions###
     @IBAction func sendButtonPrsd(_ sender: UIButton) {
         textField.resignFirstResponder()
-        guard let text = textField.text , textField.text != nil, textField.text != "Say something" else {return}
+        guard let text = textField.text , textField.text != "", textField.text != "Say something.." else {return}
         guard let uid = Auth.auth().currentUser?.uid else {return}
         sendButton.isEnabled = false
         if Auth.auth().currentUser != nil {
             
-            DataService.instance.uploadPostToDB(withMessage: text, andUID: uid, andGroupKey: nil, PostCompletion: { (succes) in
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.timeStyle = .short
+            let dateInString = formatter.string(from: date)
+            
+            DataService.instance.uploadPostToDB(withMessage: text, andUID: uid, andGroupKey: nil, timestamp: dateInString , PostCompletion: { (succes) in
                 if succes{
                     self.sendButton.isEnabled = true
-                    textField.text = ""
-                    dismiss(animated: true, completion: nil)
+                    self.textField.text = ""
+                    self.dismiss(animated: true, completion: nil)
                 }else{
                     self.sendButton.isEnabled = true
-                    textField.text = "Could not send the message please try again.." 
+                    self.textField.text = "Could not send the message please try again.."
                 }
             })
         }
     }
     @IBAction func closeButtonPrsd(_ sender: UIButton) {
+        textField.resignFirstResponder()
         dismiss(animated: true, completion: nil)
     }
     
@@ -64,12 +69,9 @@ class PostVC: UIViewController {
     func keyboardWillShowNotification(notification: NSNotification) {
         updateBottomLayoutConstraintWithNotification(notification:notification)
     }
-    
     func keyboardWillHideNotification(notification: NSNotification) {
         updateBottomLayoutConstraintWithNotification(notification:notification)
     }
-    
-    
     func updateBottomLayoutConstraintWithNotification(notification: NSNotification) {
         let userInfo = notification.userInfo!
         
@@ -85,7 +87,10 @@ class PostVC: UIViewController {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 extension PostVC : UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {

@@ -54,6 +54,10 @@ class LoginVC: UIViewController , UITextFieldDelegate{
     @IBAction func closeButtonPrsd(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    //keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
  
 }
 

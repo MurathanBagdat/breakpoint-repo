@@ -18,7 +18,6 @@ class AuthService {
     func createUser(withEmail email : String, andPassword password : String , UserCreationComplete : @escaping (_ status : Bool, _ error : Error?)->()){
         
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            
             guard let user = user  else {
                 UserCreationComplete(false, error)
                 return

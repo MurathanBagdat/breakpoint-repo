@@ -25,5 +25,9 @@ class AuthVC: UIViewController {
     @IBAction func loginWithEmailBtnPrsd(_ sender: UIButton) {
         performSegue(withIdentifier: TO_SIGNINVC, sender: nil)
     }
+    //keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
 }
