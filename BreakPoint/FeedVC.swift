@@ -9,17 +9,18 @@
 import UIKit
 
 class FeedVC: UIViewController {
-
+    //Outlets
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    //Actions##
+    @IBAction func createPostButtonPrsd(_ sender: UIButton) {
+        performSegue(withIdentifier: TO_POSTVC, sender: nil)
     }
-
-
 }
 
