@@ -21,6 +21,7 @@
 		07F73DE71F4F2A990041A47A /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F73DE61F4F2A990041A47A /* AuthVC.swift */; };
 		07F73DE91F4F2AA80041A47A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F73DE81F4F2AA80041A47A /* LoginVC.swift */; };
 		07F73DEC1F4F32FB0041A47A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F73DEB1F4F32FB0041A47A /* Constants.swift */; };
+		07F73DEE1F4F45900041A47A /* meVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F73DED1F4F45900041A47A /* meVC.swift */; };
 		DF52B6CC1064F99AC40CDFFA /* Pods_BreakPoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DBB9DD45C70ECBF09E66E /* Pods_BreakPoint.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		07F73DE61F4F2A990041A47A /* AuthVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		07F73DE81F4F2AA80041A47A /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		07F73DEB1F4F32FB0041A47A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		07F73DED1F4F45900041A47A /* meVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = meVC.swift; sourceTree = "<group>"; };
 		1E1D75BA8013A11E3243F104 /* Pods-BreakPoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPoint.release.xcconfig"; path = "Pods/Target Support Files/Pods-BreakPoint/Pods-BreakPoint.release.xcconfig"; sourceTree = "<group>"; };
 		350DBB9DD45C70ECBF09E66E /* Pods_BreakPoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakPoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE4E1F835AB2E4135471072E /* Pods-BreakPoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakPoint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BreakPoint/Pods-BreakPoint.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				0719F4E91F4EE7A10021F846 /* GroupVC.swift */,
 				07F73DE61F4F2A990041A47A /* AuthVC.swift */,
 				07F73DE81F4F2AA80041A47A /* LoginVC.swift */,
+				07F73DED1F4F45900041A47A /* meVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				0719F4E61F4EE7A10021F846 /* AppDelegate.swift in Sources */,
 				07F73DE91F4F2AA80041A47A /* LoginVC.swift in Sources */,
 				07F73DEC1F4F32FB0041A47A /* Constants.swift in Sources */,
+				07F73DEE1F4F45900041A47A /* meVC.swift in Sources */,
 				0719F4E81F4EE7A10021F846 /* FeedVC.swift in Sources */,
 				0719F5021F4EEDA00021F846 /* DataServices.swift in Sources */,
 				0719F5061F4F0AED0021F846 /* TextFieldWithInsets.swift in Sources */,
