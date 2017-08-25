@@ -31,7 +31,6 @@ class TextFieldWithInsets: UITextField {
     
     
     func setupView(){
-        
         let placeholder = NSAttributedString(string: self.placeholder!, attributes: [NSForegroundColorAttributeName:#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)])
         self.attributedPlaceholder = placeholder
     }

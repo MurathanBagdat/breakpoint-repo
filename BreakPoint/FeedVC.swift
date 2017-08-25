@@ -19,10 +19,6 @@ class FeedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 100
-        
         tableView.delegate = self
         tableView.dataSource = self
         DataService.instance.getFeedMessages { (returnedMessages) in
@@ -65,5 +61,4 @@ extension FeedVC : UITableViewDelegate , UITableViewDataSource{
         }
         return cell
     }
-    
 }

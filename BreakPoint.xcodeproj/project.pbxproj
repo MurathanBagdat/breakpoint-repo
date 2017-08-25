@@ -18,6 +18,8 @@
 		0719F5061F4F0AED0021F846 /* TextFieldWithInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0719F5051F4F0AED0021F846 /* TextFieldWithInsets.swift */; };
 		0719F5081F4F0CD70021F846 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0719F5071F4F0CD70021F846 /* ShadowView.swift */; };
 		0719F50A1F4F13450021F846 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0719F5091F4F13450021F846 /* AuthService.swift */; };
+		07324A991F509C3E008AD1CB /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07324A981F509C3E008AD1CB /* UserCell.swift */; };
+		07C89ABF1F509495005607DD /* NewGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C89ABE1F509495005607DD /* NewGroupVC.swift */; };
 		07F73DE71F4F2A990041A47A /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F73DE61F4F2A990041A47A /* AuthVC.swift */; };
 		07F73DE91F4F2AA80041A47A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F73DE81F4F2AA80041A47A /* LoginVC.swift */; };
 		07F73DEC1F4F32FB0041A47A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F73DEB1F4F32FB0041A47A /* Constants.swift */; };
@@ -42,6 +44,8 @@
 		0719F5051F4F0AED0021F846 /* TextFieldWithInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithInsets.swift; sourceTree = "<group>"; };
 		0719F5071F4F0CD70021F846 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		0719F5091F4F13450021F846 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		07324A981F509C3E008AD1CB /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		07C89ABE1F509495005607DD /* NewGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGroupVC.swift; sourceTree = "<group>"; };
 		07F73DE61F4F2A990041A47A /* AuthVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		07F73DE81F4F2AA80041A47A /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		07F73DEB1F4F32FB0041A47A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				07F73DE81F4F2AA80041A47A /* LoginVC.swift */,
 				07F73DED1F4F45900041A47A /* meVC.swift */,
 				07F73DEF1F4F5A290041A47A /* PostVC.swift */,
+				07C89ABE1F509495005607DD /* NewGroupVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 				0719F5051F4F0AED0021F846 /* TextFieldWithInsets.swift */,
 				0719F5071F4F0CD70021F846 /* ShadowView.swift */,
 				07F73DF51F4F8FB30041A47A /* FeedCell.swift */,
+				07324A981F509C3E008AD1CB /* UserCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -125,6 +131,7 @@
 		0719F4FD1F4EE9E50021F846 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				07F73DF31F4F876A0041A47A /* Message.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -161,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				07F73DEB1F4F32FB0041A47A /* Constants.swift */,
-				07F73DF31F4F876A0041A47A /* Message.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -323,8 +329,10 @@
 				07F73DE71F4F2A990041A47A /* AuthVC.swift in Sources */,
 				0719F4E61F4EE7A10021F846 /* AppDelegate.swift in Sources */,
 				07F73DE91F4F2AA80041A47A /* LoginVC.swift in Sources */,
+				07C89ABF1F509495005607DD /* NewGroupVC.swift in Sources */,
 				07F73DEC1F4F32FB0041A47A /* Constants.swift in Sources */,
 				07F73DF01F4F5A290041A47A /* PostVC.swift in Sources */,
+				07324A991F509C3E008AD1CB /* UserCell.swift in Sources */,
 				07F73DF61F4F8FB30041A47A /* FeedCell.swift in Sources */,
 				07F73DEE1F4F45900041A47A /* meVC.swift in Sources */,
 				0719F4E81F4EE7A10021F846 /* FeedVC.swift in Sources */,
