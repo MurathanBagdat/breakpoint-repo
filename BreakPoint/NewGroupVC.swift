@@ -17,16 +17,28 @@ class NewGroupVC: UIViewController {
     @IBOutlet weak var titleTextLabel: TextFieldWithInsets!
     @IBOutlet weak var descriptionTextLabel: TextFieldWithInsets!
     @IBOutlet weak var addYourFriendsTextField: TextFieldWithInsets!
+    @IBOutlet weak var scroll: UIScrollView!
+   
+
     
     
     //Variables
     var emails = [String]()
+    var selectedEmails = [String]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        registerForKeyboardNotifications()
+        
+        
+     
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        doneButton.isHidden = true
     }
     
     //Actions
@@ -46,7 +58,14 @@ class NewGroupVC: UIViewController {
             tableView.reloadData()
         }
     }
-  
+    
+    
+    //dismisses the keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
+    
    
 }
 extension NewGroupVC : UITableViewDelegate, UITableViewDataSource {
@@ -62,11 +81,66 @@ extension NewGroupVC : UITableViewDelegate, UITableViewDataSource {
         let image = UIImage(named: "defaultProfileImage")
         let email = emails[indexPath.row]
         
-        
-        cell.configureCelle(image: image!, email: email , isSelected: true)
+        if selectedEmails.contains(email) {
+            cell.configureCelle(image: image!, email: email , isSelected: true)
+        }else{
+            cell.configureCelle(image: image!, email: email , isSelected: false)
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? UserCell else {return}
+        
+        if !selectedEmails.contains(cell.userEmailLabel.text!){
+            selectedEmails.append(cell.userEmailLabel.text!)
+            addYourFriendsLabel.text = selectedEmails.joined(separator: ", ")
+            doneButton.isHidden = false
+            tableView.reloadData()
+        }else{
+            selectedEmails = selectedEmails.filter({ $0 != cell.userEmailLabel.text })
+            if selectedEmails.count > 0 {
+                addYourFriendsLabel.text = selectedEmails.joined(separator: ", ")
+                doneButton.isHidden = false
+            }else{
+                addYourFriendsLabel.text = "add your friends to your group"
+                doneButton.isHidden = true
+            }
+            tableView.reloadData()
+        }
+    }
+    
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector:
+            #selector(keyboardWasShown(_:)),
+                                               name: .UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector:
+            #selector(keyboardWillBeHidden(_:)),
+                                               name: .UIKeyboardWillHide, object: nil)
         
     }
     
+    func keyboardWasShown(_ notificiation: NSNotification) {
+        guard let info = notificiation.userInfo,
+            let keyboardFrameValue =
+            info[UIKeyboardFrameBeginUserInfoKey] as? NSValue
+            else { return }
+        
+        let keyboardFrame = keyboardFrameValue.cgRectValue
+        let keyboardSize = keyboardFrame.size
+        
+    
+        let contentInsets = UIEdgeInsetsMake(0.0, 0.0,
+                                             keyboardSize.height, 0.0)
+        scroll.contentInset = contentInsets
+        scroll.scrollIndicatorInsets = contentInsets
+    
+        }
+    
+    func keyboardWillBeHidden(_ notification: NSNotification) {
+        let contentInsets = UIEdgeInsets.zero
+        scroll.contentInset = contentInsets
+        scroll.scrollIndicatorInsets = contentInsets
+    }
     
 }
