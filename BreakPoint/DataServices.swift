@@ -70,6 +70,18 @@ class DataService {
             handler(messages)
         })
     }
+    
+    func getEmail(forUID uid : String , handler : @escaping (_ email : String)->()){
+        REF_USERS.observeSingleEvent(of: .value, with: { (userDataSnapshot) in
+            guard let userDataSnapshot = userDataSnapshot.children.allObjects as? [DataSnapshot] else {return}
+            
+            for user in userDataSnapshot{
+                if user.key == uid{
+                    handler(user.childSnapshot(forPath: "email").value as! String)
+                }
+            }
+        })
+    }
 }
 
 

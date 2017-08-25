@@ -14,3 +14,4 @@ import Foundation
 let TO_SIGNINVC = "toSigninVC"
 let TO_POSTVC = "toPostVC"
 let TO_FEEVC =  "toFeedVC"
+let SIGNOUT = "signoutSegue"

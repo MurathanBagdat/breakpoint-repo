@@ -38,7 +38,7 @@ class LoginVC: UIViewController , UITextFieldDelegate{
                 if succes{
                     AuthService.intance.loginUser(withEmail: email, andPassword: password, loginComplete: { (succes, error) in
                         if succes{
-                            self.dismiss(animated: true, completion: nil)
+                            self.performSegue(withIdentifier: TO_FEEVC, sender: nil)
                         }else{
                             print(error?.localizedDescription ?? "")
                         }

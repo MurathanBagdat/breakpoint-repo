@@ -16,10 +16,11 @@ class FeedCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     
     
-    func configureCell(image : UIImage, email : String, time : String, content : String){
-        self.senderProfileImage.image = image
+    func configureCell(image : UIImage, message : Message , email : String){
+        
         self.senderEmailAdressLabel.text = email
-        self.timeLabel.text = time
-        self.senderMessageContentLabel.text = content
+        self.senderProfileImage.image = image
+        self.timeLabel.text = message.timestamp
+        self.senderMessageContentLabel.text = message.content
     }
 }

@@ -31,6 +31,10 @@ class PostVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHideNotification(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         //keyboardStuff#######
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        userEmailLabel.text = Auth.auth().currentUser?.email
+    }
     
     
   //Actions###

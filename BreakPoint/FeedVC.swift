@@ -18,17 +18,24 @@ class FeedVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
+        
         tableView.delegate = self
         tableView.dataSource = self
+        DataService.instance.getFeedMessages { (returnedMessages) in
+            self.messages = returnedMessages.reversed()
+            self.tableView.reloadData()
+        }
        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         messages.removeAll()
-        DataService.instance.getFeedMessages { (messages) in
-            for message in messages{
-                self.messages.append(message)
-            }
+        DataService.instance.getFeedMessages { (returnedMessages) in
+            self.messages = returnedMessages.reversed()
             self.tableView.reloadData()
         }
     }
@@ -50,12 +57,12 @@ extension FeedVC : UITableViewDelegate , UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as? FeedCell else {return UITableViewCell()}
         
         let image = UIImage(named: "defaultProfileImage")
-        let email = "murathanbagdat@hotmail.com"
-        let messageContent = messages[indexPath.row].content
-        let messageTime = messages[indexPath.row].timestamp
+        let message = messages[indexPath.row]
         
-        cell.configureCell(image: image!, email: email, time: messageTime, content: messageContent)
-        
+        DataService.instance.getEmail(forUID: message.senderId) { (emailadress) in
+            
+            cell.configureCell(image: image!, message: message, email: emailadress)
+        }
         return cell
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class meVC: UIViewController {
 
@@ -19,10 +20,16 @@ class meVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        userEmailLabel.text = Auth.auth().currentUser?.email
+    }
 
     
     //Actions###
     @IBAction func signoutButtonPrsd(_ sender: UIButton) {
+        try? Auth.auth().signOut()
+        performSegue(withIdentifier:SIGNOUT, sender: nil)
     }
  
 }
