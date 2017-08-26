@@ -67,7 +67,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="ppq-t2-RH5">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="ppq-t2-RH5" customClass="CircleImage" customModule="BreakPoint" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="13" width="75" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="75" id="REe-TV-w6W"/>
@@ -224,7 +224,7 @@
                                             <action selector="sendButtonPrsd:" destination="5oS-aK-bkf" eventType="touchUpInside" id="VnQ-Zl-P05"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="Alq-fW-rvw">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="Alq-fW-rvw" customClass="CircleImage" customModule="BreakPoint" customModuleProvider="target">
                                         <rect key="frame" x="16" y="8" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="6Jo-gc-GHx"/>
@@ -336,7 +336,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EC2-UG-IM6">
                                 <rect key="frame" x="0.0" y="70" width="375" height="270"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="nnZ-YY-7wP">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="nnZ-YY-7wP" customClass="CircleImage" customModule="BreakPoint" customModuleProvider="target">
                                         <rect key="frame" x="137.5" y="35" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="1Gw-YU-KxV"/>
@@ -349,10 +349,22 @@
                                         <color key="textColor" red="0.26274509800000001" green="0.58429743749999996" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTm-Kn-Joq">
+                                        <rect key="frame" x="138" y="35" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="7TN-Hq-aIf"/>
+                                            <constraint firstAttribute="width" constant="100" id="gMW-6s-0Ah"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="chooseAnImageButtonPrsd:" destination="Ydz-6H-Dha" eventType="touchUpInside" id="dcJ-4M-lPS"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="GTm-Kn-Joq" firstAttribute="centerX" secondItem="EC2-UG-IM6" secondAttribute="centerX" id="2HL-2T-qU2"/>
                                     <constraint firstItem="nnZ-YY-7wP" firstAttribute="centerX" secondItem="EC2-UG-IM6" secondAttribute="centerX" id="Ai9-ZT-2LC"/>
+                                    <constraint firstItem="GTm-Kn-Joq" firstAttribute="top" secondItem="EC2-UG-IM6" secondAttribute="top" constant="35" id="CKJ-rw-5PZ"/>
                                     <constraint firstItem="pjA-dO-t1p" firstAttribute="centerX" secondItem="EC2-UG-IM6" secondAttribute="centerX" id="OpC-ed-L3m"/>
                                     <constraint firstAttribute="trailing" secondItem="pjA-dO-t1p" secondAttribute="trailing" id="ZsF-Jx-sxN"/>
                                     <constraint firstItem="pjA-dO-t1p" firstAttribute="top" secondItem="nnZ-YY-7wP" secondAttribute="bottom" constant="8" id="adv-Df-9b6"/>
@@ -386,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NNj-jo-o4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3505" y="-93"/>
+            <point key="canvasLocation" x="3504.8000000000002" y="-93.103448275862078"/>
         </scene>
         <!--Groups-->
         <scene sceneID="wg7-f3-ORb">
@@ -586,7 +598,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="n90-FY-lrm">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="n90-FY-lrm" customClass="CircleImage" customModule="BreakPoint" customModuleProvider="target">
                                                             <rect key="frame" x="8" y="12" width="75" height="75"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="75" id="9mx-BP-BRI"/>
@@ -847,7 +859,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="336" height="59"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="YY4-g6-VAL">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="YY4-g6-VAL" customClass="CircleImage" customModule="BreakPoint" customModuleProvider="target">
                                                                             <rect key="frame" x="10" y="5" width="50" height="50"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="50" id="DPp-lm-7rc"/>
@@ -1108,8 +1120,36 @@
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jv-Ng-vVk">
+                                <rect key="frame" x="16" y="28" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="4nV-hl-oqb"/>
+                                    <constraint firstAttribute="height" constant="35" id="clP-NQ-6bs"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="closeButtonPrsd:" destination="KZd-NG-jC6" eventType="touchUpInside" id="tUT-in-Sd2"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="1h0-P2-U7Q" customClass="CircleImage" customModule="BreakPoint" customModuleProvider="target">
+                                <rect key="frame" x="97.5" y="243" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="HXA-lu-k7k"/>
+                                    <constraint firstAttribute="width" constant="180" id="bw6-gz-QcR"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rt-bR-mTD">
+                                <rect key="frame" x="98" y="243" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="VKk-EN-zpo"/>
+                                    <constraint firstAttribute="width" constant="180" id="Wkk-Yp-uDU"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="pickAnImage:" destination="KZd-NG-jC6" eventType="touchUpInside" id="gPz-xh-WnD"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqN-WE-Yo5">
-                                <rect key="frame" x="145" y="253" width="85" height="36"/>
+                                <rect key="frame" x="145" y="433" width="85" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="1Se-QT-xsz"/>
                                     <constraint firstAttribute="width" constant="85" id="xZF-iq-P9Z"/>
@@ -1122,32 +1162,26 @@
                                     <action selector="signinButtonPrsd:" destination="KZd-NG-jC6" eventType="touchUpInside" id="Bya-HO-l9K"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jv-Ng-vVk">
-                                <rect key="frame" x="16" y="28" width="35" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="4nV-hl-oqb"/>
-                                    <constraint firstAttribute="height" constant="35" id="clP-NQ-6bs"/>
-                                </constraints>
-                                <state key="normal" image="close"/>
-                                <connections>
-                                    <action selector="closeButtonPrsd:" destination="KZd-NG-jC6" eventType="touchUpInside" id="tUT-in-Sd2"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.25231885910000001" green="0.2728226185" blue="0.31563147899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="TqN-WE-Yo5" firstAttribute="top" secondItem="1h0-P2-U7Q" secondAttribute="bottom" constant="10" id="01y-FX-32n"/>
+                            <constraint firstItem="2rt-bR-mTD" firstAttribute="top" secondItem="zRL-5J-3G2" secondAttribute="bottom" constant="15" id="2ab-Io-eHM"/>
+                            <constraint firstItem="1h0-P2-U7Q" firstAttribute="top" secondItem="zRL-5J-3G2" secondAttribute="bottom" constant="15" id="Bp3-61-xIv"/>
                             <constraint firstItem="edf-pT-eTI" firstAttribute="top" secondItem="PrC-eN-WeQ" secondAttribute="bottom" constant="30" id="CnB-5h-Vpk"/>
                             <constraint firstItem="edf-pT-eTI" firstAttribute="leading" secondItem="hIe-K9-6Iz" secondAttribute="leadingMargin" constant="20" id="F7t-1f-JFO"/>
                             <constraint firstItem="PrC-eN-WeQ" firstAttribute="top" secondItem="Zk9-zh-A9b" secondAttribute="bottom" constant="45" id="HdM-Qc-YeQ"/>
+                            <constraint firstItem="TqN-WE-Yo5" firstAttribute="centerX" secondItem="hIe-K9-6Iz" secondAttribute="centerX" id="StZ-A1-0z2"/>
                             <constraint firstItem="PrC-eN-WeQ" firstAttribute="centerX" secondItem="hIe-K9-6Iz" secondAttribute="centerX" id="WJA-HM-orV"/>
+                            <constraint firstItem="2rt-bR-mTD" firstAttribute="centerX" secondItem="hIe-K9-6Iz" secondAttribute="centerX" id="Wjk-sX-D8j"/>
                             <constraint firstItem="0jv-Ng-vVk" firstAttribute="top" secondItem="Zk9-zh-A9b" secondAttribute="bottom" constant="8" id="XaD-8t-9pC"/>
                             <constraint firstItem="zRL-5J-3G2" firstAttribute="leading" secondItem="hIe-K9-6Iz" secondAttribute="leadingMargin" constant="20" id="ZdT-8p-epx"/>
                             <constraint firstItem="edf-pT-eTI" firstAttribute="centerX" secondItem="hIe-K9-6Iz" secondAttribute="centerX" id="c7h-bs-Su3"/>
                             <constraint firstItem="zRL-5J-3G2" firstAttribute="top" secondItem="edf-pT-eTI" secondAttribute="bottom" constant="10" id="iEi-2G-E0V"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zRL-5J-3G2" secondAttribute="trailing" constant="20" id="iFR-4U-Rmg"/>
                             <constraint firstItem="TqN-WE-Yo5" firstAttribute="centerX" secondItem="hIe-K9-6Iz" secondAttribute="centerX" id="iy2-tF-QpE"/>
-                            <constraint firstItem="TqN-WE-Yo5" firstAttribute="top" secondItem="zRL-5J-3G2" secondAttribute="bottom" constant="25" id="mem-ur-ic2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="edf-pT-eTI" secondAttribute="trailing" constant="20" id="mtg-Us-MVx"/>
+                            <constraint firstItem="1h0-P2-U7Q" firstAttribute="centerX" secondItem="hIe-K9-6Iz" secondAttribute="centerX" id="qMC-Yi-91z"/>
                             <constraint firstItem="0jv-Ng-vVk" firstAttribute="leading" secondItem="hIe-K9-6Iz" secondAttribute="leadingMargin" id="qq7-bn-tn3"/>
                             <constraint firstItem="zRL-5J-3G2" firstAttribute="centerX" secondItem="hIe-K9-6Iz" secondAttribute="centerX" id="wwc-fF-xCh"/>
                         </constraints>
@@ -1155,12 +1189,13 @@
                     <connections>
                         <outlet property="emailField" destination="edf-pT-eTI" id="Guu-WP-8gS"/>
                         <outlet property="passwordField" destination="zRL-5J-3G2" id="WlP-uM-ZoV"/>
+                        <outlet property="profileImage" destination="1h0-P2-U7Q" id="xCt-ap-6u5"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="toFeedVC" id="r78-OR-ivC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMo-Jy-Xfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1170" y="-94"/>
+            <point key="canvasLocation" x="1168.8" y="-94.002998500749626"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
