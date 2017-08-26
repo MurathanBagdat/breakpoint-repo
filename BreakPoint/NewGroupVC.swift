@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class NewGroupVC: UIViewController {
     
@@ -43,6 +44,25 @@ class NewGroupVC: UIViewController {
     
     //Actions
     @IBAction func doneButtonPrsd(_ sender: Any) {
+        if titleTextLabel.text != "" && descriptionTextLabel.text != "" {
+            DataService.instance.getUID(byEmail: selectedEmails) { (uids) in
+                var uidArray = uids
+                uidArray.append((Auth.auth().currentUser?.uid)!)
+                DataService.instance.createGroup(title: self.titleTextLabel.text!, description: self.descriptionTextLabel.text!, uids: uidArray, completion: { (succes) in
+                    if succes{
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                })
+            }
+        }else{
+            let alertController = UIAlertController(title: "Please give your group a title and description", message: "", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
+                alertController.dismiss(animated: true, completion: nil)
+            })
+            alertController.addAction(alertAction)
+            present(alertController, animated: true, completion: nil)
+        }
+        
     }
     @IBAction func closeButtonPrsd(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -65,8 +85,6 @@ class NewGroupVC: UIViewController {
         self.view.endEditing(true)
     }
 
-    
-   
 }
 extension NewGroupVC : UITableViewDelegate, UITableViewDataSource {
     

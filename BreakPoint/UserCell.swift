@@ -27,6 +27,11 @@ class UserCell: UITableViewCell {
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        if selected{
+            self.backgroundColor = UIColor.clear
+        }else{
+            self.backgroundColor = UIColor.clear
+        }
 
     }
 
